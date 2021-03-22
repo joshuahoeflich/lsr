@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Maintainer: Your Name <josh@joshuahoeflich.com>
-pkgname=lsr
+pkgname=lsr-git
 pkgver=main
 pkgrel=1
 pkgdesc="List files recursively."
