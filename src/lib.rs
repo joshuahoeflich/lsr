@@ -31,7 +31,7 @@ pub fn get_arg_paths() -> Result<Vec<PathBuf>, SearchError> {
         let mut path = std::path::PathBuf::new();
         path.push(std::env::current_dir().map_err(|_| SearchError::BadDir)?);
         path.push(arg);
-        out.push(path);
+        out.push(std::fs::canonicalize(path).map_err(|_| SearchError::BadDir)?);
     }
     Ok(out)
 }
