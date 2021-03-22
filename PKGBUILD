@@ -29,5 +29,6 @@ build() {
 
 package() {
   cd "$pkgname-$pkgver"
+  mkdir -p "$pkgdir"/usr/bin
   cp target/release/lsr "$pkgdir"/usr/bin
 }

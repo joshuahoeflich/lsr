@@ -15,7 +15,7 @@ pub fn log_err(err: SearchError) {
     match err {
         SearchError::ReadDir => println!("Could not read directory."),
         SearchError::FileString => println!("Could not convert file name to string."),
-        SearchError::BadDir => println!("Could not get the current directory."),
+        SearchError::BadDir => println!("Could not recognize an argument as directory."),
     }
 }
 
