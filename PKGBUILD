@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Maintainer: Your Name <josh@joshuahoeflich.com>
 pkgname=lsr
-pkgver=1.0.0
+pkgver=main
 pkgrel=1
 pkgdesc="List files recursively."
-arch=('x86-64')
-url=""
+arch=('x86_64')
+url="https://github.com/joshuahoeflich/lsr"
 license=('MIT')
 groups=()
 depends=()
@@ -18,9 +18,9 @@ backup=()
 options=()
 install=
 changelog=
-source=($pkgname-$pkgver.tar.gz)
+source=("https://github.com/joshuahoeflich/${pkgname}/archive/main.tar.gz")
 noextract=()
-md5sums=() #autofill using updpkgsums
+md5sums=('b7a9e4a0e5ae141868b195e5fc916381')
 
 build() {
   cd "$pkgname-$pkgver"
@@ -29,5 +29,5 @@ build() {
 
 package() {
   cd "$pkgname-$pkgver"
-  cp target/release/lsr "$pkgdir"
+  cp target/release/lsr "$pkgdir"/usr/bin
 }
